@@ -1,77 +1,25 @@
 
-student_number = 11066440 
-student_name   = 'Mohamad Dabboussi' 
-
-
-
-
-#-----Initialisation Steps-------------------------------------------#
-#
-
-# Import standard Python 3 modules needed to complete this assignment.
-# You should not need to use any modules other than those provided
-# in a standard Python 3 installation for your solution.
-#
-# In particular, you may NOT use any Python modules that need to be
-# downloaded and installed separately, such as "Beautiful Soup" or
-# "Pillow", because the markers will not have access to such modules
-# and will not be able to run your code.  Only modules that are part
-# of a standard Python 3 installation may be used.
-
-# A function for exiting the program immediately (renamed
-# because "exit" is already a standard Python function).
 from sys import exit as abort
 
 # A function for opening a web document given its URL.
-# (You WILL need to use this function in your solution,
-# either directly or via the "download" function below.)
+
 from urllib.request import urlopen
 
-# Some standard Tkinter functions.  (You WILL need to use
-# SOME of these functions in your solution.)  You may also
-# import other widgets from the "tkinter" module, provided they
-# are standard ones and don't need to be downloaded and installed
-# separately.  (NB: Although you can import individual widgets
-# from the "tkinter.tkk" module, DON'T import ALL of them
-# using a "*" wildcard because the "tkinter.tkk" module
-# includes alternative versions of standard widgets
-# like "Label".)
+# Some standard Tkinter functions.  
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
 from tkinter.ttk import Progressbar
 
 # Functions for finding occurrences of a pattern defined
-# via a regular expression.  (You do not necessarily need to
-# use these functions in your solution, because the problem
-# can be solved with the string "find" function, but it will
-# be difficult to produce a concise and robust solution
-# without using regular expressions.)
+# via a regular expression. 
 from re import *
 
 # A function for displaying a web document in the host
-# operating system's default web browser (renamed to
-# distinguish it from the built-in "open" function for
-# opening local files).  (You WILL need to use this function
-# in your solution.)
+# operating system's default web browser 
 from webbrowser import open as urldisplay
 
 # All the standard SQLite functions.
 from sqlite3 import *
-
-# Confirm that the student has declared their authorship.
-# You must NOT change any of the code below.
-if not isinstance(student_number, int):
-    print('\nUnable to run: No student number supplied',
-          '(must be an integer)\n')
-    abort()
-if not isinstance(student_name, str):
-    print('\nUnable to run: No student name supplied',
-          '(must be a character string)\n')
-    abort()
-
-#
-#--------------------------------------------------------------------#
-
 
 
 def download(url = 'http://www.wikipedia.org/',
@@ -132,7 +80,7 @@ def download(url = 'http://www.wikipedia.org/',
         return None
 
     # Optionally write the contents to a local text file
-    # (overwriting the file if it already exists!)
+   
     if save_file:
         try:
             text_file = open(target_filename + '.' + filename_extension,
@@ -147,15 +95,7 @@ def download(url = 'http://www.wikipedia.org/',
     # Return the downloaded document to the caller
     return web_page_contents
 
-#
-#--------------------------------------------------------------------#
 
-
-
-#-----Student's Solution---------------------------------------------#
-#
-# Put your solution at the end of this file.
-#
 from re import findall
 
 url1 = ""
